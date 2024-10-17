@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DIAGRAMA ID="1" TIPO="tpLogico" UniversalUnicID="38B-DC-EDD-DE-2CF9-FA-CF">
+<DIAGRAMA ID="1" TIPO="tpLogico" UniversalUnicID="2424-4D-54F9-E2-BA87-E3-E4">
     <InfoDiagrama ID="1">
         <Versao Valor="3.2.0"/>
         <Autores/>
@@ -44,7 +44,7 @@
         <Campos>
             <Campo>
                 <Texto>ID_Usuario</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -54,7 +54,7 @@
             </Campo>
             <Campo>
                 <Texto>Nome_Usuario</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -64,7 +64,7 @@
             </Campo>
             <Campo>
                 <Texto>E_mail</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -74,7 +74,7 @@
             </Campo>
             <Campo>
                 <Texto>Senha</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -84,7 +84,7 @@
             </Campo>
             <Campo>
                 <Texto>CEP</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(11)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -94,7 +94,7 @@
             </Campo>
             <Campo>
                 <Texto>Cidade</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -104,7 +104,7 @@
             </Campo>
             <Campo>
                 <Texto>Rua</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -114,7 +114,7 @@
             </Campo>
             <Campo>
                 <Texto>Data_Nascimento</Texto>
-                <Tipo/>
+                <Tipo>DATE</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -166,7 +166,7 @@
         <Campos>
             <Campo>
                 <Texto>ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -176,7 +176,7 @@
             </Campo>
             <Campo>
                 <Texto>Titulo</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -186,7 +186,7 @@
             </Campo>
             <Campo>
                 <Texto>Duracao</Texto>
-                <Tipo/>
+                <Tipo>TIMESTAMP</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -196,7 +196,7 @@
             </Campo>
             <Campo>
                 <Texto>Sinopse</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -248,7 +248,7 @@
         <Campos>
             <Campo>
                 <Texto>Tipo_Filme</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -258,7 +258,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -321,7 +321,7 @@
         <Campos>
             <Campo>
                 <Texto>Temporada</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -331,7 +331,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -394,7 +394,7 @@
         <Campos>
             <Campo>
                 <Texto>fk_Usuario_ID_Usuario</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -404,7 +404,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -467,7 +467,7 @@
         <Campos>
             <Campo>
                 <Texto>Hora_Assistida</Texto>
-                <Tipo/>
+                <Tipo>TIMESTAMP</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -477,7 +477,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -487,7 +487,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Usuario_ID_Usuario</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -550,7 +550,7 @@
         <Campos>
             <Campo>
                 <Texto>Horror</Texto>
-                <Tipo/>
+                <Tipo>BOOLEAN</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -560,7 +560,7 @@
             </Campo>
             <Campo>
                 <Texto>Acao</Texto>
-                <Tipo/>
+                <Tipo>BOOLEAN</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -570,7 +570,7 @@
             </Campo>
             <Campo>
                 <Texto>Aventura</Texto>
-                <Tipo/>
+                <Tipo>BOOLEAN</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -580,7 +580,7 @@
             </Campo>
             <Campo>
                 <Texto>Comedia</Texto>
-                <Tipo/>
+                <Tipo>BOOLEAN</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -590,7 +590,7 @@
             </Campo>
             <Campo>
                 <Texto>ID_Genero</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -600,7 +600,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -663,7 +663,7 @@
         <Campos>
             <Campo>
                 <Texto>Nome_Episodio</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -673,7 +673,7 @@
             </Campo>
             <Campo>
                 <Texto>Duracao_Episodio</Texto>
-                <Tipo/>
+                <Tipo>TIMESTAMP</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -683,7 +683,7 @@
             </Campo>
             <Campo>
                 <Texto>Sinopse_Episodio</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -693,7 +693,7 @@
             </Campo>
             <Campo>
                 <Texto>ID_Episodio</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -703,7 +703,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Serie_fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -766,7 +766,7 @@
         <Campos>
             <Campo>
                 <Texto>Linguagem</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -776,7 +776,7 @@
             </Campo>
             <Campo>
                 <Texto>Tamanho</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -786,7 +786,7 @@
             </Campo>
             <Campo>
                 <Texto>ID_Legenda</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -796,7 +796,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -859,7 +859,7 @@
         <Campos>
             <Campo>
                 <Texto>ID_Plano</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -869,7 +869,7 @@
             </Campo>
             <Campo>
                 <Texto>Valor</Texto>
-                <Tipo/>
+                <Tipo>FLOAT(7)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -879,7 +879,7 @@
             </Campo>
             <Campo>
                 <Texto>Tipo_Plano</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -889,7 +889,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Usuario_ID_Usuario</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -952,7 +952,7 @@
         <Campos>
             <Campo>
                 <Texto>ID_Avaliacao</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -962,7 +962,7 @@
             </Campo>
             <Campo>
                 <Texto>Nota</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -972,7 +972,7 @@
             </Campo>
             <Campo>
                 <Texto>Comentario</Texto>
-                <Tipo/>
+                <Tipo>CHARACTER(30)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -982,7 +982,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Usuario_ID_Usuario</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>
@@ -992,7 +992,7 @@
             </Campo>
             <Campo>
                 <Texto>fk_Conteudo_ID_Conteudo</Texto>
-                <Tipo/>
+                <Tipo>INTEGER(3)</Tipo>
                 <Complemento/>
                 <Dicionario/>
                 <Observacao/>

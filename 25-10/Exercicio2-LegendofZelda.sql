@@ -1,5 +1,5 @@
 /*
-Criar um banco de dado de Legend of Zelda: utilizar o modelo lógico criado na aula 03/10.
+Criar um banco de dados de Legend of Zelda: utilizar o modelo lógico criado na aula 03/10.
 Alterar os tipos do esquema lógico para os tipos compatíveis com o Postgres. 
 Gerar o esquema físico do Banco de dados que foi planejado por vocês para criar as tabelas no banco.
 */

@@ -28,7 +28,7 @@ INSERT INTO contexto_sociocultural (origem, classe_social, crenca, fk_familia_fa
 ('Privilegiada', 'Alta', NULL, 1, 1),
 ('Privilegiada', 'Alta', NULL, 1, 1),
 ('Privilegiada', 'Alta', NULL, 1, 1),
-('Bairro pobre', 'Media', 'Cristao', 2, 5);
+('Bairro pobre', 'Média', 'Cristão', 2, 5);
 SELECT * FROM contexto_sociocultural;
 
 /** Relação MembroFamilia **/

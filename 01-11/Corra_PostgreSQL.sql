@@ -1,9 +1,9 @@
 /** Relação Tratamento **/
 INSERT INTO tratamento (tratamento_id, tratamento_nome, descricao) VALUES
-(1, 'Manipulacao', 'Atração de afro-americanos para a região.'),
-(2, 'Controle', 'Utilização de hipnose para controle do indivíduo em questão.'),
-(3, 'Transferencia', 'Processo de troca, a partir de neurocirurgia, em que o controlador é transplantado para que o espectador tome posse parcial do indivíduo.'),
-(4, 'Coagulacao', 'Fase final do tratamento onde o controle completo sobre o sujeito é exercido.');
+(1, 'Manipulação', 'Escolha e atração de afro-americano alvo para a região.'),
+(2, 'Controle', 'Uso de hipnose para controle do indivíduo em questão.'),
+(3, 'Transferência', 'A partir de neurocirurgia, é realizado um transplante cerebral em que a mente de um controlador é transferida para o corpo de um espectador, tomando, assim, posse parcial do indivíduo.'),
+(4, 'Coagulação', 'Fase final do tratamento em que é exercido e obtido o controle completo sobre o sujeito submetido.') ;
 SELECT * FROM tratamento;
 
 /** Relação Familia **/
@@ -28,7 +28,7 @@ INSERT INTO contexto_sociocultural (origem, classe_social, crenca, fk_familia_fa
 ('Privilegiada', 'Alta', NULL, 1, 1),
 ('Privilegiada', 'Alta', NULL, 1, 1),
 ('Privilegiada', 'Alta', NULL, 1, 1),
-('Bairro pobre', 'Media', 'Cristão', 2, 5);
+('Bairro pobre', 'Media', 'Cristao', 2, 5);
 SELECT * FROM contexto_sociocultural;
 
 /** Relação MembroFamilia **/

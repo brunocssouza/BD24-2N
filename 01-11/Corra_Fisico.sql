@@ -27,7 +27,7 @@ CREATE TABLE Tratamento (
     Descricao VARCHAR(200)
 );
 
-CREATE TABLE MembroFamilia_Tem (
+CREATE TABLE MembroFamilia (
     Estado_Psicologico VARCHAR(30) NOT NULL,
     fk_Personagem_Personagem_ID INTEGER,
     fk_Familia_Familia_ID INTEGER
@@ -46,10 +46,10 @@ ALTER TABLE Contexto_Sociocultural_Possui ADD CONSTRAINT FK_Contexto_Sociocultur
     FOREIGN KEY (fk_Personagem_Personagem_ID)
     REFERENCES Personagem (Personagem_ID);
  
-ALTER TABLE MembroFamilia_Tem ADD CONSTRAINT FK_MembroFamilia_Tem_1
+ALTER TABLE MembroFamilia ADD CONSTRAINT FK_MembroFamilia_1
     FOREIGN KEY (fk_Personagem_Personagem_ID)
     REFERENCES Personagem (Personagem_ID);
  
-ALTER TABLE MembroFamilia_Tem ADD CONSTRAINT FK_MembroFamilia_Tem_2
+ALTER TABLE MembroFamilia ADD CONSTRAINT FK_MembroFamilia_2
     FOREIGN KEY (fk_Familia_Familia_ID)
     REFERENCES Familia (Familia_ID);

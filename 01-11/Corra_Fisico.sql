@@ -13,7 +13,7 @@ CREATE TABLE Familia (
     Familia_Nome VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE Contexto_Sociocultural_Possui (
+CREATE TABLE contexto_sociocultural (
     Origem VARCHAR(30),
     Classe_Social VARCHAR(30),
     Crenca VARCHAR(30),
@@ -38,11 +38,11 @@ ALTER TABLE Personagem ADD CONSTRAINT FK_Personagem_2
     REFERENCES Tratamento (Tratamento_ID)
     ON DELETE RESTRICT;
  
-ALTER TABLE Contexto_Sociocultural_Possui ADD CONSTRAINT FK_Contexto_Sociocultural_Possui_1
+ALTER TABLE contexto_sociocultural ADD CONSTRAINT FK_contexto_sociocultural_1
     FOREIGN KEY (fk_Familia_Familia_ID)
     REFERENCES Familia (Familia_ID);
  
-ALTER TABLE Contexto_Sociocultural_Possui ADD CONSTRAINT FK_Contexto_Sociocultural_Possui_2
+ALTER TABLE contexto_sociocultural ADD CONSTRAINT FK_contexto_sociocultural_2
     FOREIGN KEY (fk_Personagem_Personagem_ID)
     REFERENCES Personagem (Personagem_ID);
  

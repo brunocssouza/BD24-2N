@@ -3,7 +3,7 @@ INSERT INTO tratamento (tratamento_id, tratamento_nome, descricao) VALUES
 (1, 'Manipulação', 'Escolha e atração de afro-americano alvo para a região.'),
 (2, 'Controle', 'Uso de hipnose para controle do indivíduo em questão.'),
 (3, 'Transferência', 'A partir de neurocirurgia, é realizado um transplante cerebral em que a mente de um controlador é transferida para o corpo de um espectador, tomando, assim, posse parcial do indivíduo.'),
-(4, 'Coagulação', 'Fase final do tratamento em que é exercido e obtido o controle completo sobre o sujeito submetido.') ;
+(4, 'Coagulação', 'Fase final do tratamento em que é exercido e obtido o controle completo sobre o sujeito submetido.');
 SELECT * FROM tratamento;
 
 /** Relação Familia **/

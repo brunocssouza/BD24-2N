@@ -92,21 +92,15 @@ SELECT AVG(qtde) AS qtdeProdPedido_media FROM pedido;
 
 SELECT AVG(num_pedidos) as qtdePedidos_media FROM (
 SELECT cliente_id, COUNT(cliente_id) AS num_pedidos FROM pedido GROUP BY cliente_id
-);
+) as foo;
 
 SELECT AVG(salario::numeric) AS salario_media FROM cliente;
 
 /* Exercicios 3 */
 SELECT AVG(salario::numeric) as salario_media from cliente group by genero;
 
-/* Solução 1: Aceitar que tá faltando neurônio e ficar com isso (PROBLEMA: não são chamados de Usuarios_Masculinos e Usuarios_Femininos como pede no exercício) */
-SELECT genero, COUNT(cliente_id) AS quantidade FROM cliente GROUP BY genero;
-/* Solução 2: Alterar a própria tabela com UPDATE para que cada gênero seja chamado, respectivamente, de Usuarios_Masculinos e Usuarios_Femininos. */
-UPDATE cliente SET genero = 'Usuarios_Masculinos' WHERE genero = 'Masculino';
-UPDATE cliente SET genero = 'Usuarios_Femininos' WHERE genero = 'Feminino';
-SELECT genero, COUNT(cliente_id) AS quantidade FROM cliente GROUP BY genero;
-UPDATE cliente SET genero = 'Masculino' WHERE genero = 'Usuarios_Masculinos';
-UPDATE cliente SET genero = 'Feminino' WHERE genero = 'Usuarios_Femininos';
-/* Solução 3: Não aprendemos??? */
+SELECT
+    (SELECT COUNT(*) FROM cliente WHERE genero = 'masculino') AS usuarios_masculinos,
+    (SELECT COUNT(*) FROM cliente WHERE genero = 'feminino') AS usuarios_femininos;
 
 SELECT SUM(preco*.9) AS "10%descontoProdutos_sum" FROM Produto;

@@ -15,11 +15,11 @@ SELECT * FROM familia;
 
 /** Relação Personagem **/
 INSERT INTO personagem (personagem_id, personagem_nome, etnia, genero, fk_tratamento_tratamento_id) VALUES
-(1, 'Missy Armitage', 'Branco', 'Feminino', NULL),
-(2, 'Rose Armitage', 'Branco', 'Feminino', NULL),
-(3, 'Dean Armitage', 'Branco', 'Masculino', NULL),
-(4, 'Jeremy Armitage', 'Branco', 'Masculino', NULL),
-(5, 'Chris Washington', 'Negro', 'Masculino', 2);
+(1, 'Missy', 'Branco', 'Feminino', NULL),
+(2, 'Rose', 'Branco', 'Feminino', NULL),
+(3, 'Dean', 'Branco', 'Masculino', NULL),
+(4, 'Jeremy', 'Branco', 'Masculino', NULL),
+(5, 'Chris', 'Negro', 'Masculino', 2);
 SELECT * FROM personagem;
 
 /** Relação Contexto_Sociocultural **/

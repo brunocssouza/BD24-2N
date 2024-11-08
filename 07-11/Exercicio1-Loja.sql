@@ -8,7 +8,7 @@ CREATE TABLE Produto(
 	Produto_ID SMALLINT PRIMARY KEY,
 	Produto_Nome VARCHAR(20) NOT NULL,
 	Descricao VARCHAR(100),
-	Preco NUMERIC NOT NULL CHECK(Preco > 0), /* O NUMERIC inserido é CHECADO para que somente se o mesmo for maior que 0, ele seja registrado. */ 
+	Preco MONEY NOT NULL CHECK(Preco::numeric > 0), /* O NUMERIC inserido é CHECADO para que somente se o mesmo for maior que 0, ele seja registrado. */ 
 	Qtde_Estoque SMALLINT DEFAULT 0 /* O valor associado á DEFAULT define um número padrão para aquele atributo, caso não inserido. */
 );
 
@@ -20,7 +20,6 @@ CREATE TABLE Pedido(
 );
 
 ALTER TABLE cliente ADD email VARCHAR(255) NOT NULL;
-ALTER TABLE produto RENAME COLUMN preco TO "money";
 
 ALTER TABLE pedido DROP COLUMN qtde;
 
@@ -35,7 +34,7 @@ INSERT INTO cliente(cliente_ID, cliente_nome, cliente_sobrenome, email) VALUES
 (2, 'Marcelo', 'Oliveira', '2@gmail.com'), 
 (3, 'Isadora', 'Vargas', '3@gmail.com');
 
-INSERT INTO Produto(Produto_ID, Produto_Nome, Descricao, "money", Qtde_Estoque) VALUES 
+INSERT INTO Produto(Produto_ID, Produto_Nome, Descricao, preco, Qtde_Estoque) VALUES 
 (1, 'Bola Colorida', 'Uma bola de praia.', 15.00, 13), 
 (2, 'Água', 'Água em garrafa de plástico de 1l', 5.00, 52);
 
@@ -51,14 +50,14 @@ SELECT produto_nome, qtde_estoque FROM produto;
 
 DELETE FROM pedido WHERE pedido_id = 1 AND pedido_id = 3;
 
-SELECT produto_nome, "money" FROM produto WHERE "money" < 10 ORDER BY produto_nome ASC;
+SELECT produto_nome, preco FROM produto WHERE preco::numeric < 10 ORDER BY produto_nome ASC;
 
 ALTER TABLE cliente ADD COLUMN idade INT NOT NULL DEFAULT 18;
 UPDATE cliente SET idade = 35 WHERE cliente_id = 3;
 SELECT cliente_nome, idade FROM cliente WHERE idade > 17 AND idade < 31;
 
-ALTER TABLE cliente ADD COLUMN genero VARCHAR(10);
-ALTER TABLE cliente ADD COLUMN salario NUMERIC;
+ALTER TABLE cliente ADD COLUMN genero VARCHAR(20);
+ALTER TABLE cliente ADD COLUMN salario MONEY;
 ALTER TABLE cliente ADD COLUMN cpf NUMERIC;
 
 INSERT INTO cliente (cliente_id, cliente_nome, cliente_sobrenome, email, idade, genero, salario, cpf) VALUES
@@ -70,7 +69,6 @@ UPDATE cliente SET cpf = 36728484841, salario = 1100, genero = 'Masculino' WHERE
 UPDATE cliente SET cpf = 60413100855, salario = 1300, genero = 'Masculino' WHERE cliente_id = 2;
 UPDATE cliente SET cpf = 71660303800, salario = 1420, genero = 'Feminino' WHERE cliente_id = 3;
 
-SELECT * FROM cliente;
 SELECT DISTINCT cliente_nome FROM cliente;
 SELECT cliente_nome, cpf FROM cliente;
 SELECT cliente_nome, cpf FROM cliente WHERE genero = 'Feminino';
@@ -88,19 +86,27 @@ SELECT COUNT(qtde) AS produto1pedidos_quant FROM pedido WHERE produto_id = 1;
 SELECT COUNT(DISTINCT cliente_id) AS clientesUnicos_quant FROM pedido;
 
 /* Exercicios 2 */
-SELECT AVG(preco) AS custo_media FROM produto;
+SELECT AVG(preco::numeric) AS custo_media FROM produto;
 
-SELECT AVG(qtde) AS qtdeProdPerPedido_media FROM pedido;
+SELECT AVG(qtde) AS qtdeProdPedido_media FROM pedido;
 
-SELECT AVG(num_pedidos) FROM (SELECT cliente_id, COUNT(*) AS num_pedidos FROM pedido GROUP BY cliente_id) as quantidade_pedidos;
+SELECT AVG(num_pedidos) as qtdePedidos_media FROM (
+SELECT cliente_id, COUNT(cliente_id) AS num_pedidos FROM pedido GROUP BY cliente_id
+);
 
-SELECT AVG(salario) AS salario_media FROM cliente;
+SELECT AVG(salario::numeric) AS salario_media FROM cliente;
 
 /* Exercicios 3 */
 SELECT AVG(salario::numeric) as salario_media from cliente group by genero;
 
-/* RESOLVER */
-SELECT COUNT(cliente_id) as Usuario_Masculino WHERE genero = 'Masculino', COUNT(cliente_id) as Usuario_Feminino where genero = 'Feminino' from cliente group by genero;
+/* Solução 1: Aceitar que tá faltando neurônio e ficar com isso (PROBLEMA: não são chamados de Usuarios_Masculinos e Usuarios_Femininos como pede no exercício) */
+SELECT genero, COUNT(cliente_id) AS quantidade FROM cliente GROUP BY genero;
+/* Solução 2: Alterar a própria tabela com UPDATE para que cada gênero seja chamado, respectivamente, de Usuarios_Masculinos e Usuarios_Femininos. */
+UPDATE cliente SET genero = 'Usuarios_Masculinos' WHERE genero = 'Masculino';
+UPDATE cliente SET genero = 'Usuarios_Femininos' WHERE genero = 'Feminino';
+SELECT genero, COUNT(cliente_id) AS quantidade FROM cliente GROUP BY genero;
+UPDATE cliente SET genero = 'Masculino' WHERE genero = 'Usuarios_Masculinos';
+UPDATE cliente SET genero = 'Feminino' WHERE genero = 'Usuarios_Femininos';
+/* Solução 3: Não aprendemos??? */
 
-
-
+SELECT SUM(preco*.9) AS "10%descontoProdutos_sum" FROM Produto;

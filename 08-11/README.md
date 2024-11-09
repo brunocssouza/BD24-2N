@@ -45,11 +45,11 @@ Colunas:
 - fk_familia_familia_id: Chave estrangeira para identificar a família a qual o personagem pertence.
 
 # Diagrama ER
-<img src=".\FilmeCorraConceitual.png">
+<img src=".\ER-Logico.png">
 
 # Instruções de Configuração
 ## 1. Instale o PostgreSQL:
-https://www.enterprisedb.com/postgresql-tutorial-resources-training-1?uuid=d0ed4d28-191f-4273-b6a9-427ab0b4c448&campaignId=Product_Trial_PostgreSQL_15
+[Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 ## 2. Crie o banco de dados
 ```SQL
 CREATE DATABASE FilmeCorraExport

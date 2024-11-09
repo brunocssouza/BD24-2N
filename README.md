@@ -3,7 +3,7 @@
 # DESCRICAO
 # ESTRUTURA DO BANCO DE DADOS
 # DIAGRAMA ESTRUTURA
-<img src="https://imgur.com/a/o52tdBP">
+<img src=".ModeloERLogico.png">
 
 # INSTRUÇOES DE CONFIGURAÇÃO
 ## Instale o PostgreSQL:

@@ -39,7 +39,9 @@ ___
 
 ___
 **Tabela:** personagem 
-**Descrição:** Utilizada para inserir os dados dos personagens. 
+
+**Descrição:** Utilizada para inserir os dados dos personagens.
+ 
 **Colunas:** 
 - **personagem_id**: Identificador único do personagem. 
 - **personagem_nome**: Primeiro nome do personagem. 

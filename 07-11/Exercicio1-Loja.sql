@@ -100,7 +100,7 @@ SELECT AVG(salario::numeric) AS salario_media FROM cliente;
 SELECT AVG(salario::numeric) as salario_media from cliente group by genero;
 
 SELECT
-    (SELECT COUNT(*) FROM cliente WHERE genero = 'masculino') AS usuarios_masculinos,
-    (SELECT COUNT(*) FROM cliente WHERE genero = 'feminino') AS usuarios_femininos;
+    (SELECT COUNT(*) FROM cliente WHERE genero = 'Masculino') AS usuarios_masculinos,
+    (SELECT COUNT(*) FROM cliente WHERE genero = 'Feminino') AS usuarios_femininos;
 
 SELECT SUM(preco*.9) AS "10%descontoProdutos_sum" FROM Produto;

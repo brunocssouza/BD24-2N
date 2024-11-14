@@ -104,13 +104,13 @@ SELECT SUM(preco*.9) AS "10%descontoProdutos_sum" FROM Produto;
 /* 1) Selecione o nome dos Usuarios e o número do pedido de cada pedido. */
 SELECT cliente_nome, pedido_id FROM cliente, pedido;
 
-/*2) Selecione o nome dos produtos e a qtde nos pedidos.*/
+/* 2) Selecione o nome dos produtos e a qtde nos pedidos.*/
 SELECT produto_nome, qtde FROM produto, pedido;
 
-/*3) Selecione o nome dos client, número do pedido onde a qtde de produto comprada for maior que 2.*/
+/* 3) Selecione o nome dos client, número do pedido onde a qtde de produto comprada for maior que 2.*/
 SELECT cliente_nome, pedido_id, qtde FROM cliente, pedido
 WHERE cliente.cliente_id = pedido.cliente_id AND qtde > 2;
 
-/*4) Selecione o nome dos cliente, qtde dos pedidos, nome dos produtos e faça a soma do valor dos produtos comprados.*/
+/* 4) Selecione o nome dos cliente, qtde dos pedidos, nome dos produtos e faça a soma do valor dos produtos comprados.*/
 SELECT cliente_nome, qtde, produto_nome, preco*qtde AS soma_valor FROM cliente, pedido, produto 
 WHERE pedido.cliente_id = cliente.cliente_id AND pedido.produto_id = produto.produto_id;

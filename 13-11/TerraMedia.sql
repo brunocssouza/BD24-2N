@@ -52,7 +52,7 @@ INSERT INTO coletados (id_personagem, id_item, id_cenario) VALUES
 (2, 1, 1);
 
 /* 2) Encontrar os itens coletados por Aragorn (ARAGORN É ID 1) */
-SELECT nome_item AS "Aragorn_achou" FROM itens, coletados 
+SELECT nome_item AS "Aragorn_Achou" FROM itens, coletados 
 WHERE Coletados.id_personagem = 1 AND Itens.id_item = Coletados.id_item;
 
 /* 3) Desobrir os cenários que Legolas visitou (LEGOLAS É ID 2) */

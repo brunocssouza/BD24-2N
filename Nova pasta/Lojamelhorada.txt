@@ -1,0 +1,15 @@
+select * from coletados
+select * from personagens
+select * from itens
+select * from cenarios
+
+/* 2| ARAGORN É ID 1 */
+SELECT DISTINCT nome_item AS aragorn_achou FROM itens, coletados WHERE Coletados.id_personagem = 1 and Itens.id_item = Coletados.id_item;
+
+/* 3| LEGOLAS É ID 2, CENARIOS 2 e 1 */
+SELECT nome_cenario FROM cenarios, coletados WHERE Coletados.id_personagem = 2 AND Coletados.id_cenario = Cenarios.id_cenario;
+
+/* 4| GIMLI É ID 3, CENARIO É 3 */
+SELECT DISTINCT nome_item AS gimli_CampoHelm_achou FROM itens, coletados, cenarios WHERE Coletados.id_personagem = 3 AND Itens.id_item = Coletados.id_item AND Coletados.id_cenario = Cenarios.id_cenario;
+
+/* 5| 

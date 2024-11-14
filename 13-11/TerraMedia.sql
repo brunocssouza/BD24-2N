@@ -1,4 +1,4 @@
-/* 1) Crie o banco de dados: TerraMedia. Insira os seguintes SQLs: */
+/* 1) Crie o banco de dados TerraMedia. Insira os seguintes SQLs: */
 CREATE TABLE personagens (
     id_personagem INT PRIMARY KEY,
     nome VARCHAR(50)

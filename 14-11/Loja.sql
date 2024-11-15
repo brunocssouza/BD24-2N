@@ -36,13 +36,16 @@ INSERT INTO cliente(cliente_ID, cliente_nome, cliente_sobrenome, email) VALUES
 (3, 'Isadora', 'Vargas', '3@gmail.com');
 
 INSERT INTO Produto(Produto_ID, Produto_Nome, Descricao, preco, Qtde_Estoque) VALUES 
-(1, 'Bola Colorida', 'Uma bola de praia.', 15.00, 13), 
-(2, 'Água', 'Água em garrafa de plástico de 1l', 5.00, 52);
+(1, 'Bola Colorida', 'Uma bola de praia.', 15, 13), 
+(2, 'Água', 'Água em garrafa de plástico de 1l', 5, 52),
+(3, 'Refrigerante', 'Latinha 350ml', 7, 80);
 
 INSERT INTO Pedido(Pedido_ID, Cliente_ID, Produto_ID, Qtde) VALUES
 (1, 1, 2, 3), 
 (2, 2, 1, 1), 
-(3, 3, 2, 2);
+(3, 3, 2, 2),
+(4, 1, 3, 1),
+(5, 1, 1, 2);
 
 SELECT produto_nome, qtde_estoque FROM produto;
 
@@ -120,19 +123,35 @@ SELECT pedido_id, produto_nome, Cliente.cliente_nome, Pedido.qtde FROM Pedido
 JOIN Produto ON Produto.produto_id = Pedido.produto_id
 JOIN Cliente ON Pedido.cliente_id = Cliente.cliente_id;
 
-/* Exercicio 1 */
+/* Exercicio 1: Selecione todos os produtos que foram comprados por um determinado usuario */
 SELECT produto_nome FROM Produto
 JOIN Pedido ON Pedido.produto_id = Produto.produto_id
-WHERE Pedido.cliente_id = 1
+WHERE Pedido.cliente_id = 1;
 
-/* Exercicio 2 */
+/* Exercicio 2: Selecione todos os produtos em uma determinada categoria */
 CREATE TABLE Categoria (categoria_id INT PRIMARY KEY, Categoria_nome VARCHAR);
+
 ALTER TABLE Produto ADD COLUMN categoria_id INT REFERENCES Categoria(categoria_id);
+
 INSERT INTO Categoria(categoria_id, categoria_nome) VALUES
 (1, 'Lazer'),
 (2, 'Bebida');
+
 UPDATE Produto SET categoria_id = 1 WHERE produto_id = 1;
 UPDATE Produto SET categoria_id = 2 WHERE produto_id = 2;
-SELECT produto_nome FROM Produto WHERE categoria_id = 1;
+UPDATE Produto SET categoria_id = 2 WHERE produto_id = 3;
 
-/* Exercicio 3 */
+SELECT produto_nome FROM Produto WHERE categoria_id = 2;
+
+/* Exercicio 3: Selecione todos os pedidos feitos por um detrminado cliente em uma determinada categoria */
+SELECT pedido_id, Produto.produto_nome, Categoria.categoria_nome FROM Pedido
+JOIN Cliente ON Cliente.cliente_id = Pedido.cliente_id
+JOIN Produto ON Produto.produto_Id = Pedido.produto_id
+JOIN Categoria ON Categoria.categoria_id = Produto.categoria_id
+WHERE Cliente.cliente_id = 1 AND Categoria.categoria_id = 2;
+
+/* Exercicio 4: Selecione os pedidos com os nomes dos produtos de um usuario*/
+SELECT pedido_id, Produto.produto_nome FROM Pedido
+JOIN Cliente ON Cliente.cliente_id = Pedido.cliente_id
+JOIN Produto ON Produto.produto_Id = Pedido.produto_id
+WHERE Cliente.cliente_id = 1;

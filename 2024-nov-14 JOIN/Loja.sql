@@ -38,7 +38,8 @@ INSERT INTO cliente(cliente_ID, cliente_nome, cliente_sobrenome, email) VALUES
 INSERT INTO Produto(Produto_ID, Produto_Nome, Descricao, preco, Qtde_Estoque) VALUES 
 (1, 'Bola Colorida', 'Uma bola de praia.', 15, 13), 
 (2, 'Água', 'Água em garrafa de plástico de 1l', 5, 52),
-(3, 'Refrigerante', 'Latinha 350ml', 7, 80);
+(3, 'Refrigerante', 'Latinha 350ml', 7, 80),
+(4, 'Feijao', 'Feijao Preto', 3.50, 10);
 
 INSERT INTO Pedido(Pedido_ID, Cliente_ID, Produto_ID, Qtde) VALUES
 (1, 1, 2, 3), 
@@ -113,6 +114,9 @@ WHERE cliente.cliente_id = pedido.cliente_id AND qtde > 2;
 SELECT cliente_nome, qtde, produto_nome, preco*qtde AS soma_valor FROM cliente, pedido, produto 
 WHERE pedido.cliente_id = cliente.cliente_id AND pedido.produto_id = produto.produto_id;
 
+UPDATE Cliente SET cliente_nome = 'Lucas' WHERE cliente_id = 4;
+UPDATE Cliente SET cliente_nome = 'José' WHERE cliente_id = 5;
+
 /* 14-11 */
 /* Exemplos */
 SELECT pedido_id, produto_nome, qtde FROM pedido
@@ -135,7 +139,8 @@ ALTER TABLE Produto ADD COLUMN categoria_id INT REFERENCES Categoria(categoria_i
 
 INSERT INTO Categoria(categoria_id, categoria_nome) VALUES
 (1, 'Lazer'),
-(2, 'Bebida');
+(2, 'Bebida')
+(3, 'Comida');
 
 UPDATE Produto SET categoria_id = 1 WHERE produto_id = 1;
 UPDATE Produto SET categoria_id = 2 WHERE produto_id = 2;

@@ -135,7 +135,7 @@ ALTER TABLE Produto ADD COLUMN categoria_id INT REFERENCES Categoria(categoria_i
 
 INSERT INTO Categoria(categoria_id, categoria_nome) VALUES
 (1, 'Lazer'),
-(2, 'Bebida')
+(2, 'Bebida'),
 (3, 'Comida');
 
 UPDATE Produto SET categoria_id = 1 WHERE produto_id = 1;
@@ -200,6 +200,6 @@ SELECT Produto_Nome, Categoria_Nome FROM Produto
 CROSS JOIN Categoria
 WHERE Categoria.Categoria_Nome = 'Lazer';
 
-SELECT Pedido_ID, Categoria_Nome, Produto_Nome FROM Produto
+SELECT Pedido_ID, Categoria_Nome, Produto_Nome FROM Produto;
 FULL OUTER JOIN Categoria ON Categoria.Categoria_ID = Produto.Categoria_ID
 FULL OUTER JOIN Pedido ON Pedido.Produto_ID = Produto.Produto_ID;

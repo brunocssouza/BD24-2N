@@ -28,7 +28,7 @@ I saw the murder happen, and I recognized the killer from my gym when I was work
 Resumo:
 - The guy is part of a gym, at least until 9th January, last week.
 - It was a man.
-- He used a gun.
+- He used a gun.  OBS: Foi inútil - só perdi tempo.
 - He had a "Get Fit Now Gym" bag with Gold membership number starting with "48Z". OBS: Foi inútil - só perdi tempo.
 - Has a car with the plate "H42W".
 */
@@ -45,7 +45,7 @@ I was hired by a woman with a lot of money. I don't know her name but I know she
 
 Resumo:
 - Uma mulher.
-- Rica.
+- Rica.  OBS: Foi inútil - só perdi tempo.
 - Entre 5'5" (65") e 5'7" (67") de altura.
 - Cabelo vermelho.
 - Dirige um Tesla Model S.
